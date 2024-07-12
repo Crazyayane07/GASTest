@@ -8,9 +8,6 @@
 
 class UInputMappingContext;
 
-/**
- *
- */
 UCLASS()
 class GASTEST_API AGASTestPlayerController : public APlayerController
 {
@@ -18,14 +15,9 @@ class GASTEST_API AGASTestPlayerController : public APlayerController
 	
 protected:
 
-	/** Input Mapping Context to be used for player input */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputMappingContext* InputMappingContext;
 
-	// Begin Actor interface
-protected:
-
 	virtual void BeginPlay() override;
 
-	// End Actor interface
 };
