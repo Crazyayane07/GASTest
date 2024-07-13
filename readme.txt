@@ -1,5 +1,20 @@
-- first time using GAS
-- because project was generated with C++ files i stayed in generated convention. Normally i would prefer to have more sobfolder, habing public/private folders and use max 2 letters to identify my classes like GT from GAS Test in this example and not full project name
-- UR 5.4
-- Min.Max hp i sprawdzanie śmierci eh - reset gracza
-- game icons
+- Used assets from https://game-icons.net
+- UE 5.4
+- Used Template from Epic 'First Person Template,' which generated basic C++ files with project prefix 'GASTest.' Normally, I prefer to use separate public/private folders and a shorter prefix like 'GT,' but I wanted to stay consistent with the generated project.
+- It was my first time using GAS. Feedback is super welcome!
+- I'm not happy with:
+	- Not implementing min/max values in C++ and needing to have a separate attribute for MaxHealth and checking if Health is below 0.
+	- Having notifications for dummy/player death in blueprint ticks or damage.
+	- Not having a better notification when fire dot finishes except in Cue.
+	- Implementing bullet and fire damage differently due to inexperience with GAS.
+	- More similiar names for ArmorMultiplayer and FireResistance. The higher their value then less damage their actors take.
+- ArmorMultiplier only works for dummies. Player always gets constant damage from tiles.
+- On the map, there are 3 dummies:
+	- Default/Blue: 100 HP, 1x ArmorMultiplier, 1x FireResistance
+	- Strong/Red: 150 HP, 2x ArmorMultiplier, 0.5x FireResistance
+	- Weak/Yellow: 80 HP, 0.5x ArmorMultiplier, 2x FireResistance
+- Bullet Damage: 20
+- Fire Damage: 50 + DOT (damage over time)
+- Player can change bullet types with numpad keys
+- Execution of project took 2 days. Started 12.07.2024 with research about GAS and finished at 13.07.2024
+- Github: https://github.com/Crazyayane07/GASTest (I didnt' plan sending github link so my commits names may be lacking)
