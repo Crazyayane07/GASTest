@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Game', Inc. All Rights Reserved.
 
 #include "GASTestProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
@@ -34,4 +34,11 @@ void AGASTestProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 
 		Destroy();
 	}
+}
+
+void AGASTestProjectile::BeginPlay()
+{
+	Super::BeginPlay();
+
+	CollisionComp->IgnoreActorWhenMoving(GetInstigator(), true);
 }

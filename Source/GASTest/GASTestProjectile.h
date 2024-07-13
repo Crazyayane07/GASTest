@@ -35,5 +35,6 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Hit")
 	void HitActor(const AActor* HitActor);
 
+	virtual void BeginPlay();
 };
 

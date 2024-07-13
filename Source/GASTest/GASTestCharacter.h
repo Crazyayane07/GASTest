@@ -47,6 +47,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 	UTP_WeaponComponent* GetWeaponComponent();
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Weapon")
+	void OnSetUpWeaponComponentRef();
+
 	void SetWeaponComponentRef(UTP_WeaponComponent* NewWeaponComp);
 
 protected:

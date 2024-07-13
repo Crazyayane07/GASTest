@@ -49,6 +49,7 @@ UTP_WeaponComponent* AGASTestCharacter::GetWeaponComponent()
 void AGASTestCharacter::SetWeaponComponentRef(UTP_WeaponComponent* NewWeaponComp)
 {
 	WeaponComp = NewWeaponComp;
+	OnSetUpWeaponComponentRef();
 }
 
 void AGASTestCharacter::BeginPlay()
