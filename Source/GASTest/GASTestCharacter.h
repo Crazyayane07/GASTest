@@ -15,6 +15,7 @@ class UInputAction;
 class UInputMappingContext;
 struct FInputActionValue;
 class UAbilitySystemComponent;
+class UGASTestBasicAttributeSet;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -40,6 +41,9 @@ public:
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
 protected:
+
+	UPROPERTY()
+	const UGASTestBasicAttributeSet* AttributeSet;
 
 	virtual void BeginPlay();
 

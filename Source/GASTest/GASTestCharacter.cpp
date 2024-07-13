@@ -11,6 +11,7 @@
 #include "InputActionValue.h"
 #include "Engine/LocalPlayer.h"
 #include "AbilitySystemComponent.h"
+#include "GASTestBasicAttributeSet.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -42,6 +43,11 @@ UAbilitySystemComponent* AGASTestCharacter::GetAbilitySystemComponent() const
 void AGASTestCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (IsValid(AbilitySystemComponent))
+	{
+		 AttributeSet = AbilitySystemComponent->GetSet<UGASTestBasicAttributeSet>();
+	}
 }
 
 

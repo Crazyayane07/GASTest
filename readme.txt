@@ -1,0 +1,2 @@
+- first time using GAS
+- because project was generated with C++ files i stayed in generated convention. Normally i would prefer to have more sobfolder, habing public/private folders and use max 2 letters to identify my classes like GT from GAS Test in this example and not full project name
