@@ -17,10 +17,18 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FGameplayAttributeData Health;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FGameplayAttributeData MaxHealth;
+
 public:
 
 	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UGASTestBasicAttributeSet, Health);
 	GAMEPLAYATTRIBUTE_VALUE_GETTER(Health);
 	GAMEPLAYATTRIBUTE_VALUE_SETTER(Health);
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(Health);
+
+	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UGASTestBasicAttributeSet, MaxHealth);
+	GAMEPLAYATTRIBUTE_VALUE_GETTER(MaxHealth);
+
+
 };

@@ -31,10 +31,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
 
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Abilities")
 	UAbilitySystemComponent* AbilitySystemComponent;
+
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 
@@ -42,7 +42,7 @@ public:
 
 protected:
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Abilities")
 	const UGASTestBasicAttributeSet* AttributeSet;
 
 	virtual void BeginPlay();
