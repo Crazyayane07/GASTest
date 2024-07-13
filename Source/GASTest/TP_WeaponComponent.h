@@ -15,7 +15,7 @@ class GASTEST_API UTP_WeaponComponent : public USkeletalMeshComponent
 
 public:
 
-	UPROPERTY(EditDefaultsOnly, Category=Projectile)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category=Projectile)
 	TSubclassOf<class AGASTestProjectile> ProjectileClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
@@ -40,6 +40,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	void Fire();
+
+	UFUNCTION(BlueprintCallable, Category="Weapon")
+	void SetNewBulletClass(TSubclassOf<class AGASTestProjectile> NewProjectileClass);
 
 protected:
 

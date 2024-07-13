@@ -36,6 +36,7 @@ void UTP_WeaponComponent::Fire()
 	
 			FActorSpawnParameters ActorSpawnParams;
 			ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+			ActorSpawnParams.Instigator = Character;
 	
 			World->SpawnActor<AGASTestProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
 		}
@@ -56,6 +57,11 @@ void UTP_WeaponComponent::Fire()
 	}
 }
 
+void UTP_WeaponComponent::SetNewBulletClass(TSubclassOf<class AGASTestProjectile> NewProjectileClass)
+{
+	ProjectileClass = NewProjectileClass;
+}
+
 bool UTP_WeaponComponent::AttachWeapon(AGASTestCharacter* TargetCharacter)
 {
 	Character = TargetCharacter;
@@ -69,6 +75,7 @@ bool UTP_WeaponComponent::AttachWeapon(AGASTestCharacter* TargetCharacter)
 	AttachToComponent(Character->GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
 
 	Character->AddInstanceComponent(this);
+	Character->SetWeaponComponentRef(this);
 
 	if (APlayerController* PlayerController = Cast<APlayerController>(Character->GetController()))
 	{
@@ -79,7 +86,7 @@ bool UTP_WeaponComponent::AttachWeapon(AGASTestCharacter* TargetCharacter)
 
 		if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
 		{
-			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Fire);
+			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, Character, &AGASTestCharacter::Fire);
 		}
 	}
 

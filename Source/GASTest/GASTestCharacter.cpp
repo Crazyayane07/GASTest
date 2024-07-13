@@ -12,6 +12,7 @@
 #include "Engine/LocalPlayer.h"
 #include "AbilitySystemComponent.h"
 #include "GASTestBasicAttributeSet.h"
+#include "TP_WeaponComponent.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -38,6 +39,16 @@ AGASTestCharacter::AGASTestCharacter()
 UAbilitySystemComponent* AGASTestCharacter::GetAbilitySystemComponent() const
 {
 	return AbilitySystemComponent;
+}
+
+UTP_WeaponComponent* AGASTestCharacter::GetWeaponComponent()
+{
+	return WeaponComp;
+}
+
+void AGASTestCharacter::SetWeaponComponentRef(UTP_WeaponComponent* NewWeaponComp)
+{
+	WeaponComp = NewWeaponComp;
 }
 
 void AGASTestCharacter::BeginPlay()

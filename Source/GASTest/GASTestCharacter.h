@@ -16,6 +16,7 @@ class UInputMappingContext;
 struct FInputActionValue;
 class UAbilitySystemComponent;
 class UGASTestBasicAttributeSet;
+class UTP_WeaponComponent;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -34,16 +35,26 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Abilities")
 	UAbilitySystemComponent* AbilitySystemComponent;
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Weapon")
+	void Fire();
+
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
+	UFUNCTION(BlueprintCallable, Category = "Weapon")
+	UTP_WeaponComponent* GetWeaponComponent();
+
+	void SetWeaponComponentRef(UTP_WeaponComponent* NewWeaponComp);
+
 protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Abilities")
 	const UGASTestBasicAttributeSet* AttributeSet;
+
+	UTP_WeaponComponent* WeaponComp;
 
 	virtual void BeginPlay();
 
