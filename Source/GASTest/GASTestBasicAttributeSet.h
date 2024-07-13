@@ -23,6 +23,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FGameplayAttributeData ArmorMultiplayer;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FGameplayAttributeData FireResistance;
+
 public:
 
 	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UGASTestBasicAttributeSet, Health);
@@ -35,4 +38,7 @@ public:
 
 	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UGASTestBasicAttributeSet, ArmorMultiplayer);
 	GAMEPLAYATTRIBUTE_VALUE_GETTER(ArmorMultiplayer);
+
+	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UGASTestBasicAttributeSet, FireResistance);
+	GAMEPLAYATTRIBUTE_VALUE_GETTER(FireResistance);
 };
