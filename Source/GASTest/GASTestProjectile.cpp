@@ -31,8 +31,6 @@ void AGASTestProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr))
 	{
 		HitActor(OtherActor);
-
-		Destroy();
 	}
 }
 
