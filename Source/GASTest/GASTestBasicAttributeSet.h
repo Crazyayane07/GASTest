@@ -20,6 +20,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FGameplayAttributeData MaxHealth;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FGameplayAttributeData ArmorMultiplayer;
+
 public:
 
 	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UGASTestBasicAttributeSet, Health);
@@ -30,5 +33,6 @@ public:
 	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UGASTestBasicAttributeSet, MaxHealth);
 	GAMEPLAYATTRIBUTE_VALUE_GETTER(MaxHealth);
 
-
+	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(UGASTestBasicAttributeSet, ArmorMultiplayer);
+	GAMEPLAYATTRIBUTE_VALUE_GETTER(ArmorMultiplayer);
 };
